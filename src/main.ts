@@ -14,8 +14,8 @@ import 'zone.js';
     <div style="border: 2px dotted teal; padding: 1rem; margin: 1rem">
       <h3>Parent component</h3>
       <div style="display: flex; margin: 0.5rem 0; justify-content: space-between; gap: 0.5rem">
-        <input placeholder="prop1" class="flex-basis: 100%" [(ngModel)]="prop1" />
-        <input placeholder="prop2" class="flex-basis: 100%" [(ngModel)]="prop2" />
+        <input placeholder="prop1" style="flex-basis: 100%" [(ngModel)]="prop1" />
+        <input placeholder="prop2" style="flex-basis: 100%" [(ngModel)]="prop2" />
         <button (click)="onClick()" style="flex-basis: 100%">Update</button>
       </div>
       <h4 style="font-style: italic">myObj:</h4>
