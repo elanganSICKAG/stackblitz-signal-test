@@ -1,4 +1,4 @@
-import { Component, model } from '@angular/core';
+import { Component, model, effect } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 
@@ -28,14 +28,19 @@ export class Child {
   protected prop1: string = '';
   protected prop2: string = '';
 
-  onMyModelChange(event: MyObj) {
-    this.myObjModel.set(event);
-    console.log('this.myObjModel changed in child:', this.myObjModel());
-    this.doThings(event);
+  constructor() {
+    effect(() => {
+      console.log('this.myObjModel change observed in effect()');
+      this.doThings();
+    })
   }
 
-  doThings(event: MyObj) {
-    console.log('I changed value in: ', event);
+  onMyModelChange(event: MyObj) {
+    this.myObjModel.set(event);
+  }
+
+  doThings() {
+    console.log('I changed value in: ', this.myObjModel());
   }
 
   onClick() {

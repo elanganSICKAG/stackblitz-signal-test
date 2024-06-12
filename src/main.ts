@@ -41,15 +41,18 @@ export class App {
   };
 
   doSomething(event?: MyObj) {
-    console.log('Event in parent:', event);
-    console.log('this.myObj in parent:', this.myObj);
-
-    console.log('this.isAdmin in parent:', this.isAdmin);
-    console.log('this.strValue in parent:', this.strValue);
+    if (event) {
+      this.myObj = event;
+    }
   }
 
   onClick() {
-    console.log('clicked', this.prop1, this.prop2);
+    const obj: MyObj = {
+      prop1: this.prop1,
+      prop2: this.prop2,
+    };
+
+    this.myObj = obj;
   }
 }
 
