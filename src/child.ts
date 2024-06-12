@@ -22,8 +22,6 @@ import { MyObj } from './model/my-obj';
   `,
 })
 export class Child {
-  public checked = model(false);
-  public strValue = model('some val');
   public myObjModel = model<MyObj>();
   protected prop1: string = '';
   protected prop2: string = '';
@@ -44,9 +42,6 @@ export class Child {
   }
 
   onClick() {
-    this.checked.set(!this.checked());
-    this.strValue.set(this.prop1);
-
     const obj: MyObj = {
       prop1: this.prop1,
       prop2: this.prop2,

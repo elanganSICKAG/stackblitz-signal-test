@@ -22,8 +22,6 @@ import 'zone.js';
       <pre>{{ myObj | json }}</pre>
       <app-child [myObjModel]="myObj"
                  (myObjModelChange)="doSomething($event)"
-                 [(checked)]="isAdmin"
-                 [(strValue)]="strValue"
                  >
       </app-child>
     </div>
@@ -32,8 +30,6 @@ import 'zone.js';
 export class App {
   public prop1: string = '';
   public prop2: string = '';
-  protected isAdmin = false;
-  protected strValue = 'init val';
 
   public myObj: MyObj = {
     prop1: 'original value 1',
