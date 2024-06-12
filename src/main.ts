@@ -23,6 +23,7 @@ import 'zone.js';
       <app-child [myObjModel]="myObj"
                  (myObjModelChange)="doSomething($event)"
                  [(checked)]="isAdmin"
+                 [(strValue)]="strValue"
                  >
       </app-child>
     </div>
@@ -32,6 +33,7 @@ export class App {
   public prop1: string = '';
   public prop2: string = '';
   protected isAdmin = false;
+  protected strValue = 'init val';
 
   public myObj: MyObj = {
     prop1: 'original value 1',
@@ -43,6 +45,7 @@ export class App {
     console.log('this.myObj in parent:', this.myObj);
 
     console.log('this.isAdmin in parent:', this.isAdmin);
+    console.log('this.strValue in parent:', this.strValue);
   }
 
   onClick() {
